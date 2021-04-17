@@ -21,7 +21,7 @@ class WeatherClient {
             weatherURL?.queryItems = [
                 URLQueryItem(name: "lat", value: "\(lat)"),
                 URLQueryItem(name: "lon", value: "\(lon)"),
-                URLQueryItem(name: "exclude", value: "hourly, minutely"),
+                URLQueryItem(name: "exclude", value: "hourly, minutely, alerts"),
                 URLQueryItem(name: "appid", value: WeatherClient.APP_ID),
                 URLQueryItem(name: "units", value: "imperial")
             ]

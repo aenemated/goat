@@ -20,7 +20,6 @@ class LocationService: NSObject, CLLocationManagerDelegate {
     weak var delegate: LocationServiceDelegate?
     
     private var manager: CLLocationManager?
-    private var currentLocation: CLLocation?
     
     var isAuthorized: Bool {
         guard let manager = manager else { return false }
@@ -33,7 +32,7 @@ class LocationService: NSObject, CLLocationManagerDelegate {
         manager?.delegate = self
     }
 
-    func startUpdating() {
+    func getLocation() {
         manager?.startUpdatingLocation()
     }
 
@@ -44,16 +43,12 @@ class LocationService: NSObject, CLLocationManagerDelegate {
 
     internal func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         delegate?.didAuthorizeLocationServices(status: status)
-        switch status {
-        case .authorizedWhenInUse: startUpdating()
-        default: break
-        }
     }
 
     internal func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
-        currentLocation = location
         delegate?.didUpdateLocation(location: location)
+        manager.stopUpdatingLocation()
     }
     
 }
