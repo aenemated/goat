@@ -117,7 +117,9 @@ extension MainViewController: LocationServiceDelegate {
     
     func didAuthorizeLocationServices(status: CLAuthorizationStatus) {
         switch status {
-        case .authorizedWhenInUse: navigationItem.rightBarButtonItem?.isEnabled = false
+        case .authorizedWhenInUse:
+            load()
+            navigationItem.rightBarButtonItem?.isEnabled = false
         default: break
         }
     }
