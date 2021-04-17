@@ -3,18 +3,25 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		968303B0262B40BF00926B1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968303AF262B40BF00926B1B /* AppDelegate.swift */; };
 		968303B2262B40BF00926B1B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968303B1262B40BF00926B1B /* SceneDelegate.swift */; };
-		968303B4262B40BF00926B1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968303B3262B40BF00926B1B /* ViewController.swift */; };
 		968303B7262B40BF00926B1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968303B5262B40BF00926B1B /* Main.storyboard */; };
 		968303B9262B40C000926B1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 968303B8262B40C000926B1B /* Assets.xcassets */; };
 		968303BC262B40C000926B1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968303BA262B40C000926B1B /* LaunchScreen.storyboard */; };
 		968303C7262B40C000926B1B /* goatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968303C6262B40C000926B1B /* goatTests.swift */; };
 		968303D2262B40C000926B1B /* goatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968303D1262B40C000926B1B /* goatUITests.swift */; };
+		968303EF262B466400926B1B /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968303EE262B466400926B1B /* HTTPClient.swift */; };
+		968303F6262B494B00926B1B /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968303F5262B494B00926B1B /* WeatherService.swift */; };
+		968303FE262B495800926B1B /* WeatherClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968303FD262B495800926B1B /* WeatherClient.swift */; };
+		96830403262B49AE00926B1B /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96830402262B49AE00926B1B /* LocationService.swift */; };
+		9683040B262B4A2F00926B1B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9683040A262B4A2F00926B1B /* MainViewController.swift */; };
+		96830410262B4A3900926B1B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9683040F262B4A3900926B1B /* DetailViewController.swift */; };
+		9683041B262B57B400926B1B /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9683041A262B57B400926B1B /* Weather.swift */; };
+		CB8348860F457651F38CB89D /* Pods_goat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A14B0B356D6285D7B3D208C /* Pods_goat.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A14B0B356D6285D7B3D208C /* Pods_goat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_goat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		968303AC262B40BF00926B1B /* goat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = goat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		968303AF262B40BF00926B1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		968303B1262B40BF00926B1B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		968303B3262B40BF00926B1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		968303B6262B40BF00926B1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		968303B8262B40C000926B1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		968303BB262B40C000926B1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +56,15 @@
 		968303CD262B40C000926B1B /* goatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = goatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		968303D1262B40C000926B1B /* goatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goatUITests.swift; sourceTree = "<group>"; };
 		968303D3262B40C000926B1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		968303EE262B466400926B1B /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		968303F5262B494B00926B1B /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		968303FD262B495800926B1B /* WeatherClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherClient.swift; sourceTree = "<group>"; };
+		96830402262B49AE00926B1B /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		9683040A262B4A2F00926B1B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9683040F262B4A3900926B1B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		9683041A262B57B400926B1B /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		9F4398C79260AD63EF94FF15 /* Pods-goat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goat.release.xcconfig"; path = "Target Support Files/Pods-goat/Pods-goat.release.xcconfig"; sourceTree = "<group>"; };
+		A15C689632B790396B040952 /* Pods-goat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-goat.debug.xcconfig"; path = "Target Support Files/Pods-goat/Pods-goat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB8348860F457651F38CB89D /* Pods_goat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F9745EFA035FEFC76D04758 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1A14B0B356D6285D7B3D208C /* Pods_goat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		968303A3262B40BF00926B1B = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +108,8 @@
 				968303C5262B40C000926B1B /* goatTests */,
 				968303D0262B40C000926B1B /* goatUITests */,
 				968303AD262B40BF00926B1B /* Products */,
+				F9392477A46F190E92269848 /* Pods */,
+				6F9745EFA035FEFC76D04758 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,12 +127,12 @@
 			isa = PBXGroup;
 			children = (
 				968303AF262B40BF00926B1B /* AppDelegate.swift */,
-				968303B1262B40BF00926B1B /* SceneDelegate.swift */,
-				968303B3262B40BF00926B1B /* ViewController.swift */,
-				968303B5262B40BF00926B1B /* Main.storyboard */,
-				968303B8262B40C000926B1B /* Assets.xcassets */,
-				968303BA262B40C000926B1B /* LaunchScreen.storyboard */,
 				968303BD262B40C000926B1B /* Info.plist */,
+				968303B1262B40BF00926B1B /* SceneDelegate.swift */,
+				968303E4262B448800926B1B /* Assets */,
+				968303E2262B447400926B1B /* Networking */,
+				968303E6262B44ED00926B1B /* Models */,
+				968303E3262B447A00926B1B /* UI */,
 			);
 			path = goat;
 			sourceTree = "<group>";
@@ -128,6 +155,69 @@
 			path = goatUITests;
 			sourceTree = "<group>";
 		};
+		968303E2262B447400926B1B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				968303F3262B466A00926B1B /* Clients */,
+				968303F4262B467100926B1B /* Services */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		968303E3262B447A00926B1B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				9683040F262B4A3900926B1B /* DetailViewController.swift */,
+				9683040A262B4A2F00926B1B /* MainViewController.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		968303E4262B448800926B1B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				968303B8262B40C000926B1B /* Assets.xcassets */,
+				968303BA262B40C000926B1B /* LaunchScreen.storyboard */,
+				968303B5262B40BF00926B1B /* Main.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		968303E6262B44ED00926B1B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9683041A262B57B400926B1B /* Weather.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		968303F3262B466A00926B1B /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				968303EE262B466400926B1B /* HTTPClient.swift */,
+				968303FD262B495800926B1B /* WeatherClient.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		968303F4262B467100926B1B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				96830402262B49AE00926B1B /* LocationService.swift */,
+				968303F5262B494B00926B1B /* WeatherService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F9392477A46F190E92269848 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A15C689632B790396B040952 /* Pods-goat.debug.xcconfig */,
+				9F4398C79260AD63EF94FF15 /* Pods-goat.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +225,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 968303D6262B40C000926B1B /* Build configuration list for PBXNativeTarget "goat" */;
 			buildPhases = (
+				20AC6E2F85B6EC991DE30B94 /* [CP] Check Pods Manifest.lock */,
 				968303A8262B40BF00926B1B /* Sources */,
 				968303A9262B40BF00926B1B /* Frameworks */,
 				968303AA262B40BF00926B1B /* Resources */,
+				F84C7B5307DDD523452AF836 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,14 +345,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		20AC6E2F85B6EC991DE30B94 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-goat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F84C7B5307DDD523452AF836 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-goat/Pods-goat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-goat/Pods-goat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-goat/Pods-goat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		968303A8262B40BF00926B1B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				968303B4262B40BF00926B1B /* ViewController.swift in Sources */,
+				9683040B262B4A2F00926B1B /* MainViewController.swift in Sources */,
+				96830403262B49AE00926B1B /* LocationService.swift in Sources */,
+				968303F6262B494B00926B1B /* WeatherService.swift in Sources */,
 				968303B0262B40BF00926B1B /* AppDelegate.swift in Sources */,
+				9683041B262B57B400926B1B /* Weather.swift in Sources */,
+				968303EF262B466400926B1B /* HTTPClient.swift in Sources */,
 				968303B2262B40BF00926B1B /* SceneDelegate.swift in Sources */,
+				968303FE262B495800926B1B /* WeatherClient.swift in Sources */,
+				96830410262B4A3900926B1B /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +573,7 @@
 		};
 		968303D7262B40C000926B1B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A15C689632B790396B040952 /* Pods-goat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +593,7 @@
 		};
 		968303D8262B40C000926B1B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F4398C79260AD63EF94FF15 /* Pods-goat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

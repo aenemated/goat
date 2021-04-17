@@ -1,0 +1,6 @@
+framework module Pods_goat {
+  umbrella header "Pods-goat-umbrella.h"
+
+  export *
+  module * { export * }
+}

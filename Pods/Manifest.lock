@@ -1,0 +1,34 @@
+PODS:
+  - DateToolsSwift (5.0.0)
+  - PromiseKit (6.13.1):
+    - PromiseKit/CorePromise (= 6.13.1)
+    - PromiseKit/Foundation (= 6.13.1)
+    - PromiseKit/UIKit (= 6.13.1)
+  - PromiseKit/CorePromise (6.13.1)
+  - PromiseKit/Foundation (6.13.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.13.1):
+    - PromiseKit/CorePromise
+  - SDWebImage (5.10.4):
+    - SDWebImage/Core (= 5.10.4)
+  - SDWebImage/Core (5.10.4)
+
+DEPENDENCIES:
+  - DateToolsSwift
+  - PromiseKit
+  - SDWebImage
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - DateToolsSwift
+    - PromiseKit
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  DateToolsSwift: 4207ada6ad615d8dc076323d27037c94916dbfa6
+  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
+  SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
+
+PODFILE CHECKSUM: fbabd5acd2cbb686eb79bac05ea535015f895c4b
+
+COCOAPODS: 1.10.1
