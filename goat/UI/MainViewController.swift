@@ -24,6 +24,7 @@ class MainViewController: UIViewController {
     var viewModel: MainViewModel?
     
     let tableView = UITableView(frame: .zero, style: .plain)
+    let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,9 @@ class MainViewController: UIViewController {
         tableView.tableFooterView = UIView()
         view.addSubview(tableView)
         
+        refreshControl.addTarget(self, action: #selector(load), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+        
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -56,13 +60,25 @@ class MainViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
-        reload()
+        load()
     }
     
-    func reload() {
+    @objc func load() {
         guard LocationService.shared.isAuthorized else { return }
+        refreshControl.beginRefreshing()
         LocationService.shared.delegate = self
         LocationService.shared.getLocation()
+    }
+    
+    func request(coordinates: CLLocationCoordinate2D) {
+        WeatherService.shared.get(coordinates: coordinates) { [weak self] weather, error in
+            self?.refreshControl.endRefreshing()
+            guard let weather = weather, error == nil else {
+                // Show some manner of error
+                return
+            }
+            self?.render(weather: weather)
+        }
     }
     
     func render(weather: OpenWeather) {
@@ -109,13 +125,7 @@ extension MainViewController: LocationServiceDelegate {
     }
     
     func didUpdateLocation(location: CLLocation) {
-        WeatherService.shared.get(coordinates: location.coordinate) { [weak self] weather, error in
-            guard let weather = weather, error == nil else {
-                // Show some manner of error
-                return
-            }
-            self?.render(weather: weather)
-        }
+        request(coordinates: location.coordinate)
     }
     
 }
