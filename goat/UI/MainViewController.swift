@@ -10,12 +10,10 @@ import CoreLocation
 
 struct MainViewModel {
     
-    let dailyConditions: [DailyConditions]
-    let cellModels: [WeatherTableCellModel]
+    let viewModels: [WeatherViewModel]
     
     init(weather: OpenWeather) {
-        dailyConditions = weather.daily.compactMap { $0 }
-        cellModels = weather.daily.compactMap { WeatherTableCellModel(conditions: $0) }
+        viewModels = weather.daily.compactMap { WeatherViewModel($0) }
     }
 }
 
@@ -96,21 +94,21 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let viewModel = viewModel else { return 0 }
-        return viewModel.cellModels.count
+        return viewModel.viewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: WeatherTableCell.reuseIdentifier, for: indexPath) as! WeatherTableCell
-        if let cellModel = viewModel?.cellModels[indexPath.row] {
-            cell.reload(cellModel: cellModel)
+        if let viewModel = viewModel?.viewModels[indexPath.row] {
+            cell.reload(viewModel: viewModel)
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let conditions = viewModel?.dailyConditions[indexPath.row] else { return }
+        guard let viewModel = viewModel?.viewModels[indexPath.row] else { return }
         let detailVC = DetailViewController()
-        detailVC.reload(viewModel: .init(conditions: conditions))
+        detailVC.reload(viewModel: viewModel)
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }

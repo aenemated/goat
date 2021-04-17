@@ -6,26 +6,7 @@
 //
 
 import UIKit
-import DateToolsSwift
 import SDWebImage
-
-struct WeatherTableCellModel {
-    
-    let iconURL: URL?
-    let date: String
-    let dayOfWeek: String
-    let highTemp: String
-    let lowTemp: String
-    
-    init(conditions: DailyConditions) {
-        iconURL = conditions.weather.first?.iconURL
-        date = conditions.dt.format(with: "MMMM d, yyyy")
-        dayOfWeek = conditions.dt.format(with: "EEEE")
-        highTemp = "High: \(conditions.temp.max.rounded())°"
-        lowTemp = "Low: \(conditions.temp.min.rounded())°"
-    }
-    
-}
 
 class WeatherTableCell: UITableViewCell {
     
@@ -110,12 +91,12 @@ class WeatherTableCell: UITableViewCell {
         iconImageView.image = nil
     }
     
-    func reload(cellModel: WeatherTableCellModel) {
-        iconImageView.sd_setImage(with: cellModel.iconURL)
-        dayOfWeekLabel.text = cellModel.dayOfWeek
-        dateLabel.text = cellModel.date
-        highTempLabel.text = cellModel.highTemp
-        lowTempLabel.text = cellModel.lowTemp
+    func reload(viewModel: WeatherViewModel) {
+        iconImageView.sd_setImage(with: viewModel.iconURL)
+        dayOfWeekLabel.text = viewModel.dayOfWeek
+        dateLabel.text = viewModel.date
+        highTempLabel.text = viewModel.highTemp
+        lowTempLabel.text = viewModel.lowTemp
     }
 
 }

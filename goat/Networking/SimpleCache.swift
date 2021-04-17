@@ -32,5 +32,6 @@ class SimpleCache {
         let data = try? JSONEncoder().encode(weather)
         UserDefaults.standard.setValue(data, forKey: Key.weather.rawValue)
         UserDefaults.standard.setValue(Date(), forKey: Key.updated.rawValue)
+        UserDefaults.standard.synchronize() // Just to make sure it saves while testing out of Xcode
     }
 }
