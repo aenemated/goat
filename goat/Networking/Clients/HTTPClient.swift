@@ -16,7 +16,7 @@ class HTTPClient {
     func get(url: URL, completion: @escaping (Data?, Error?) -> Void) {
         let request = URLRequest(url: url)        
         let task = session.dataTask(with: request, completionHandler: { data, response, error in
-            guard error == nil, let result = data else {
+            guard error == nil, let result = data else { // Could always use better error handling
                 completion(nil, error)
                 return
             }

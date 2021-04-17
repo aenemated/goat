@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SimpleCache {
+class SimpleCache { // Simple!
     
     static let shared = SimpleCache()
     

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import PromiseKit
+import PromiseKit // I love PromiseKit
 
 class WeatherClient {
     
@@ -28,11 +28,13 @@ class WeatherClient {
             
             guard let url = weatherURL?.url else { fatalError("Something went bad wrong.") }
             HTTPClient.shared.get(url: url) { data, error in
-                guard error == nil, let data = data else { // Could do far more with API response error handling
+                guard error == nil, let data = data else {
                     seal.reject(error!)
                     return
                 }
                 
+                // It'd be better to pass around generics and not have to decode in every client call
+                // But it's just this one so we'll let it slide
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 decoder.dateDecodingStrategy = .secondsSince1970

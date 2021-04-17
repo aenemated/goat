@@ -19,6 +19,11 @@ class WeatherService {
             return
         }
         
+        // Probably overkill to use PromiseKit here but ... in larger applications
+        // I like being able to build service requests out of whatever client requests
+        // I need for whatever reason. This is more a `this is how I might construct services`
+        // example.
+        
         firstly {
             WeatherClient.shared.getWeather(lat: coordinates.latitude, lon: coordinates.longitude)
         }.done { weather in
